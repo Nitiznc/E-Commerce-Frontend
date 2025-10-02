@@ -1,0 +1,461 @@
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+  overflow: hidden;
+  margin: 0;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.auth-container {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  max-width: 450px;
+  width: 100%;
+  transform: translateY(0);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  max-height: 95vh;
+  overflow-y: auto;
+  /* Hide scrollbar for all browsers */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.auth-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+.auth-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+}
+
+.auth-form-container {
+  padding: 40px 35px;
+  position: relative;
+}
+
+.auth-toggle {
+  display: flex;
+  margin-bottom: 30px;
+  background: #f8f9fa;
+  border-radius: 50px;
+  padding: 6px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.auth-toggle button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  background: transparent;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  color: #666;
+}
+
+.auth-toggle button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+.auth-toggle button span {
+  position: relative;
+  z-index: 1;
+  color: inherit;
+}
+
+.auth-toggle button.active {
+  color: white !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.auth-toggle button.active span {
+  color: white !important;
+}
+
+.auth-toggle button.active::before {
+  left: 0;
+}
+
+.auth-toggle button:hover:not(.active) {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.02);
+  color: #667eea;
+}
+
+.form-control {
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 2px solid #e0e0e0;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  margin-bottom: 15px;
+  background: #fafafa;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  width: 100%;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.form-control::placeholder {
+  color: #999;
+}
+
+.form-control:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.15), inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  background: white;
+  transform: translateY(-2px);
+  outline: none;
+  color: #333;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  position: absolute;
+  top: 14px;
+  left: 18px;
+  color: #999;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  background: white;
+  padding: 0 5px;
+  font-size: 15px;
+}
+
+.form-control:focus + label,
+.form-control:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 13px;
+  font-size: 12px;
+  color: #667eea;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  cursor: pointer;
+  color: white !important;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.btn-primary:hover::before {
+  left: 0;
+}
+
+.btn-primary span {
+  position: relative;
+  z-index: 1;
+  color: white !important;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.social-login {
+  display: flex;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+.social-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  color: #666;
+}
+
+.social-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #f8f9fa;
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.social-btn:hover::before {
+  left: 0;
+}
+
+.social-btn i {
+  position: relative;
+  z-index: 1;
+  transition: transform 0.3s ease;
+  color: inherit;
+}
+
+.social-btn:hover {
+  border-color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #667eea;
+}
+
+.social-btn:hover i {
+  transform: scale(1.15);
+}
+
+.divider {
+  text-align: center;
+  margin: 25px 0;
+  position: relative;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+}
+
+.divider span {
+  background: white;
+  padding: 0 18px;
+  position: relative;
+  color: #666 !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.form-section {
+  display: none;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-section.active {
+  display: block;
+}
+
+.brand-logo {
+  font-size: 28px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  color: #667eea;
+}
+
+.brand-logo::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 2px;
+}
+
+.alert {
+  border-radius: 12px;
+  display: none;
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: slideIn 0.4s ease forwards;
+  font-size: 14px;
+  color: #333;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.alert.show {
+  display: block;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 2;
+  font-size: 16px;
+}
+
+.password-toggle:hover {
+  color: #667eea;
+}
+
+.form-group.password-group .form-control {
+  padding-right: 45px;
+}
+
+.auth-form-container,
+.auth-form-container * {
+  color: #333;
+}
+
+.form-text {
+  color: #666 !important;
+  font-size: 14px;
+}
+
+.form-check-label {
+  color: #666 !important;
+}
+
+.text-muted {
+  color: #999 !important;
+}
+
+.btn-loading {
+  pointer-events: none;
+  position: relative;
+  color: transparent !important;
+}
+
+.btn-loading::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  left: 50%;
+  margin-left: -9px;
+  margin-top: -9px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  border-right-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+  /* Hide scrollbars globally */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .auth-form-container {
+    padding: 30px 25px;
+  }
+  
+  .auth-container {
+    max-height: 90vh;
+  }
+  
+  .brand-logo {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+  
+  .social-login {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Ensure no horizontal scroll */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  overflow-x: hidden;
+}

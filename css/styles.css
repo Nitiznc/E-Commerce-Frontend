@@ -1,0 +1,318 @@
+/* =======================
+   Global Theme Colors
+   ======================= */
+:root {
+  --primary-color: #ff6600;        /* Vibrant Orange */
+  --secondary-color: #98bd4f;         /* Dark Gray Background */
+  --text-color: #ddd;              /* Light Text */
+  --footer-text: #ccc;             /* Footer Text */
+  --hover-color: #ff8533;          /* Lighter Orange */
+  --white: #fff;                   /* White Text */
+  --navbar-bg: #98bd4f;               /* Navbar Background */
+  --card-glow: rgba(144, 204, 80, 0.25);
+  --card-hover-glow: rgba(194, 216, 86, 0.043);
+  --shadow-color: rgba(137, 176, 85, 0.4);
+}
+
+/* =======================
+   Body & Fonts
+   ======================= */
+body {
+  font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #59c17a;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* =======================
+   Navbar
+   ======================= */
+.navbar {
+  background: var(--navbar-bg) !important;
+  padding: 12px 30px;
+  box-shadow: 0 6px 20px var(--shadow-color);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+.navbar-brand {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--primary-color) !important;
+}
+
+.nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--white) !important;
+  margin: 0 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: var(--hover-color) !important;
+}
+
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* =======================
+   Hero Carousel
+   ======================= */
+#heroCarousel {
+  margin-top: 80px; /* account for fixed navbar */
+}
+
+#heroCarousel .carousel-item img {
+  height: 600px;
+  object-fit: cover;
+}
+
+#heroCarousel .carousel-caption {
+  background: rgba(0,0,0,0.65);
+  padding: 30px 35px;
+  border-radius: 15px;
+  max-width: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25%;
+  text-align: center;
+}
+
+.carousel-caption h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--white);
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.7);
+}
+
+.carousel-caption p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: var(--text-color);
+}
+
+.carousel-caption .btn {
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 50px;
+  background: var(--primary-color);
+  box-shadow: 0 6px 15px var(--card-glow);
+  transition: all 0.3s ease;
+}
+
+.carousel-caption .btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px var(--card-hover-glow);
+}
+
+/* Carousel Controls */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* =======================
+   Section Titles
+   ======================= */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  color: var(--primary-color);
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* =======================
+   Product Cards
+   ======================= */
+.card {
+  background: var(--secondary-color);
+  border: none;
+  border-radius: 15px;
+  color: var(--text-color);
+  box-shadow: 0 4px 12px var(--card-glow);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 25px var(--card-hover-glow);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.12);
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.card-text {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 12px;
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  border-radius: 50px;
+  padding: 8px 22px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px var(--card-glow);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--hover-color);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px var(--card-hover-glow);
+}
+
+/* =======================
+   Footer
+   ======================= */
+.footer {
+  background: var(--secondary-color);
+  color: var(--footer-text);
+  padding: 60px 0 30px 0;
+  font-size: 14px;
+}
+
+.footer h5 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-list li {
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+.footer-list a {
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-list a:hover {
+  color: var(--primary-color);
+}
+
+.footer hr {
+  border-color: rgba(255,255,255,0.2);
+}
+
+.footer .copyright {
+  font-size: 13px;
+  margin-top: 25px;
+  color: var(--footer-text);
+}
+
+/* =======================
+   Cart Badge
+   ======================= */
+.cart-badge {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: 3px 7px;
+  font-size: 12px;
+  border-radius: 50%;
+  position: relative;
+  top: -8px;
+  right: 6px;
+}
+
+/* =======================
+   Responsive Enhancements
+   ======================= */
+@media (max-width: 992px) {
+  .carousel-caption {
+    max-width: 90%;
+    bottom: 20%;
+    padding: 20px 25px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 28px;
+  }
+
+  .carousel-caption p {
+    font-size: 16px;
+  }
+
+  .card-img-top {
+    height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 22px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+    margin: 0 8px;
+  }
+
+  .carousel-caption h2 {
+    font-size: 22px;
+  }
+
+  .carousel-caption p {
+    font-size: 14px;
+  }
+
+  .card-img-top {
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 26px;
+  }
+}
