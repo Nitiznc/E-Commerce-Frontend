@@ -1,4 +1,4 @@
-const BASE_URL = "https://e-commerce-backend-production-215a.up.railway.app";
+const BASE_URL = "https://e-commerce-backend-production-e267.up.railway.app";
 
 // --- TOKEN HELPERS ---
 function isTokenExpired(token) {

@@ -1,5 +1,5 @@
 const BASE_URL =
-  "https://e-commerce-backend-production-215a.up.railway.app/api/auth";
+  "https://e-commerce-backend-production-e267.up.railway.app/api/auth";
 
 // token helper 
 
